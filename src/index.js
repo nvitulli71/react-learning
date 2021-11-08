@@ -1,32 +1,12 @@
 import React from "react";
-import ReactDOM from "react-dom";
-import faker from "faker";
-
-import CommentDetail from "./CommentDetail";
-import ApprovalCard from "./ApprovalCard";
+import ReactDom from "react-dom";
 
 const App = () => {
-  return (
-    <div className="ui container comments">
-      <ApprovalCard>
-        <CommentDetail
-          author="Nick"
-          timeAgo="Today at 10:00 AM"
-          avatar={faker.image.avatar()}
-          blogPost="HELLO!!!!"
-        />
-      </ApprovalCard>
-
-      <ApprovalCard>
-        <CommentDetail
-          author="John"
-          timeAgo="Yesterday at 3:57 PM"
-          avatar={faker.image.avatar()}
-          blogPost="Good bye!"
-        />
-      </ApprovalCard>
-    </div>
+  window.navigator.geolocation.getCurrentPosition(
+    (position) => console.log(position),
+    (error) => console.error(error)
   );
+  return <div>Latitude: </div>;
 };
 
-ReactDOM.render(<App />, document.querySelector("#root"));
+ReactDom.render(<App />, document.querySelector("#root"));
